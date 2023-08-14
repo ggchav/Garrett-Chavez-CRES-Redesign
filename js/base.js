@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let currentOpenDropdown = null;
 
-    // Close all open dropdowns
     function closeDropdowns() {
         dropdownButtons.forEach(button => {
             const dropdown = button.nextElementSibling;
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
         currentOpenDropdown = null;
     }
 
-    // Toggle a dropdown and close others
     function toggleDropdown(button, index) {
         const dropdown = primaryLinks[index];
 
@@ -29,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Dropdown button click listeners
     dropdownButtons.forEach((button, index) => {
         button.addEventListener("click", event => {
             event.stopPropagation();
@@ -37,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Close dropdowns when clicking outside
     document.addEventListener("click", event => {
         const target = event.target;
         if (!target.closest(".cres-nav")) {
@@ -45,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Toggle aside content
     asides.forEach(aside => {
         aside.addEventListener("click", () => {
             aside.classList.toggle("open");
@@ -54,5 +49,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const hiddenContent = aside.querySelector(".hidden");
             hiddenContent.classList.toggle("open");
         });
+    });
+
+    // Close the dropdowns on any click
+    document.addEventListener("click", event => {
+        closeDropdowns();
     });
 });
