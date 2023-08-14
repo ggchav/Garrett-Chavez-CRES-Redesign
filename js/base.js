@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     const dropdownButtons = document.querySelectorAll(".cres-nav button:not(:last-child)");
     const primaryLinks = document.querySelectorAll(".primary-links");
+    const asides = document.querySelectorAll(".card-dropdown aside");
 
     let currentOpenDropdown = null;
 
+    // Close all open dropdowns
     function closeDropdowns() {
         dropdownButtons.forEach(button => {
             const dropdown = button.nextElementSibling;
@@ -13,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         currentOpenDropdown = null;
     }
 
+    // Toggle a dropdown and close others
     function toggleDropdown(button, index) {
         const dropdown = primaryLinks[index];
 
@@ -26,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Dropdown button click listeners
     dropdownButtons.forEach((button, index) => {
         button.addEventListener("click", event => {
             event.stopPropagation();
@@ -33,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Close dropdowns when clicking outside
     document.addEventListener("click", event => {
         const target = event.target;
         if (!target.closest(".cres-nav")) {
@@ -40,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const asides = document.querySelectorAll(".card-dropdown aside");
+    // Toggle aside content
     asides.forEach(aside => {
         aside.addEventListener("click", () => {
             aside.classList.toggle("open");
