@@ -70,12 +70,6 @@ li {
     line-height: 24px;
 }
 
-main {
-    margin: auto;
-    max-width: 1080px;
-    padding: 0 16px;
-}
-
 .ucsc-nav {
     align-items: center;
     display: flex;
@@ -216,7 +210,7 @@ main {
 }
 
 .primary-links.open {
-    max-height: 450px;
+    max-height: 1000px;
 }
 
 .primary-links a {
@@ -275,11 +269,16 @@ main {
 
 
 
+main {
+    margin: auto;
+    max-width: 1080px;
+    padding: 0 16px;
+}
+
 section {
-    align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 120px;
+    gap: 45px;
     padding: 50px 0 100px 0;
 }
 
@@ -287,28 +286,9 @@ article {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    max-width: 900px;
 }
 
-.card-image {
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 100%;
-}
 
-.card-image aside {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    width: clamp(45ch, 100%, 75ch);
-}
-
-.card-image img {
-    border-radius: var(--radius);
-    width: clamp(0px, 30%, 350px);
-}
 
 .cta-button {
     background: rgb(var(--blue1));
@@ -346,54 +326,57 @@ article {
     fill: rgb(var(--blue1));
 }
 
-.card-button {
-    width: 100%;
+.header {
+    gap: 15px;
 }
 
-.card-button aside {
+.header p {
+    max-width: 75ch;
+}
+
+
+
+.card-image {
     align-items: center;
-    display: flex;
-    gap: 40px;
+    flex-direction: row;
     justify-content: space-between;
+    max-width: 100%;
 }
 
-.card-button aside p {
-    width: 60%;
+.card-image aside {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: clamp(45ch, 100%, 75ch);
 }
 
-.divider {
-    background: rgb(var(--ucscyellow));
-    height: 2px;
+.card-image img {
+    border-radius: var(--radius);
+    width: clamp(0px, 30%, 350px);
 }
+
+
 
 .points {
     max-width: 100%;
 }
 
-.points aside:first-of-type {
-    margin-bottom: 20px;
-}
-
-.points aside:not(:first-of-type) {
+.points aside {
     border-radius: var(--radius);
     padding: 20px;
 }
 
-.points aside:nth-child(even) {
+.points aside:nth-child(odd) {
     background: rgba(var(--blue2), .05);
 }
 
-.points aside:nth-child(odd):not(:first-of-type) {
+.points aside:nth-child(even) {
     background: rgba(var(--blue1), .05);
 }
 
-.points h2,
-h3 {
+.points h3 {
     margin-bottom: 15px;
-}
-
-.points p {
-    max-width: 700px;
 }
 
 .points li {
@@ -403,6 +386,8 @@ h3 {
 .points aside li:not(:last-child) {
     margin-bottom: 15px;
 }
+
+
 
 .card-dropdown {
     max-width: 100%;
