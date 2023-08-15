@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const dropdownButtons = document.querySelectorAll(".cres-nav button:not(:last-child)");
     const primaryLinks = document.querySelectorAll(".primary-links");
-    const asides = document.querySelectorAll(".card-dropdown aside");
+    const asides = document.querySelectorAll(".card-dropdown aside:not(.no-hidden)");
 
     let currentOpenDropdown = null;
 
