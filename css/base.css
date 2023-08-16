@@ -363,6 +363,10 @@ article li {
     max-width: 800px;
 }
 
+.text-block.centered {
+    margin: auto;
+}
+
 .text-block.pinned h3 {
     background: rgba(218, 33, 109, 0.15);
     border-radius: var(--radius);
@@ -416,7 +420,8 @@ article li {
     background: rgba(var(--blue1), .05);
 }
 
-.points aside h3 {
+.points aside h3,
+.points aside p {
     margin-bottom: 15px;
 }
 
