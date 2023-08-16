@@ -318,7 +318,7 @@ article li {
     display: flex;
     gap: 12px;
     margin-right: auto;
-    padding: 8px;
+    padding: 12px;
     text-decoration: none;
     transition: background 0.2s var(--easy), border 0.2s var(--easy), transform 0.2s var(--easy);
 }
@@ -371,6 +371,23 @@ article li {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+}
+
+.text-button a {
+    flex-shrink: 0;
+}
+
+.image-header {
+    position: relative;
+}
+
+
+.image-header h1 {
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.9);
+    bottom: 40px;
+    padding: 20px;
+    position: absolute;
 }
 
 
