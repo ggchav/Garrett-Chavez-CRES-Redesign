@@ -592,7 +592,7 @@ article li {
     display: flex;
     gap: 30px;
     margin-right: auto;
-    padding: 20px 40px;
+    padding: 20px 30px;
 }
 
 .steps aside .number {
