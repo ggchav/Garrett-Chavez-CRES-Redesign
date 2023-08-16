@@ -435,7 +435,7 @@ article li {
     display: flex;
     flex-direction: column;
     max-width: 700px;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .checklist label {
@@ -458,7 +458,6 @@ article li {
     position: absolute;
     width: 0;
 }
-
 
 .checkmark {
     border: 2px solid rgb(var(--blue1));
