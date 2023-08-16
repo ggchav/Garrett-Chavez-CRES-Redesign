@@ -1,18 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const cresNav = document.querySelector(".cres-nav");
     const dropdownButtons = document.querySelectorAll(".cres-nav button:not(:last-child)");
     const primaryLinks = document.querySelectorAll(".primary-links");
     const asides = document.querySelectorAll(".card-dropdown aside:not(.no-hidden)");
 
-    let currentOpenDropdown = null;
+    // Toggle sticky class based on scroll position
+    function toggleSticky() {
+        cresNav.classList.toggle("sticky", cresNav.getBoundingClientRect().top <= 0);
+    }
 
+    window.addEventListener("scroll", toggleSticky);
+    toggleSticky();
+
+    // Dropdown related functions
     function closeDropdowns() {
         dropdownButtons.forEach(button => {
+            button.classList.remove("open");
             const dropdown = button.nextElementSibling;
             dropdown.classList.remove("open");
-            button.classList.remove("open");
         });
         currentOpenDropdown = null;
     }
+
+    let currentOpenDropdown = null;
 
     function toggleDropdown(button, index) {
         const dropdown = primaryLinks[index];
@@ -21,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
             closeDropdowns();
         } else {
             closeDropdowns();
-            dropdown.classList.add("open");
             button.classList.add("open");
+            dropdown.classList.add("open");
             currentOpenDropdown = dropdown;
         }
     }
@@ -34,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Close dropdowns when clicking outside
     document.addEventListener("click", event => {
         const target = event.target;
         if (!target.closest(".cres-nav")) {
@@ -41,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Toggle aside visibility
     asides.forEach(aside => {
         aside.addEventListener("click", () => {
             aside.classList.toggle("open");
@@ -52,7 +64,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Close the dropdowns on any click
-    document.addEventListener("click", event => {
-        closeDropdowns();
-    });
+    document.addEventListener("click", closeDropdowns);
 });
