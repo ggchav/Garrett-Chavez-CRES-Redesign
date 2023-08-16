@@ -5,7 +5,7 @@
     --blue2: 19, 165, 220;
     --blue3: 0, 121, 136;
     --easy: cubic-bezier(0.5, 0.25, 0, 1);
-    --radius: 6px;
+    --radius: 10px;
 }
 
 * {
@@ -230,6 +230,7 @@ nav a {
     display: block;
     font-size: 1rem;
     padding: 8px 15px;
+    transition: background 0.1s var(--easy);
 }
 
 .first-link {
@@ -268,7 +269,6 @@ nav a {
 
 .breadcrumbs p {
     font-size: .9rem;
-    margin-bottom: 20px;
 }
 
 .breadcrumbs a {
@@ -317,9 +317,14 @@ article li {
     border-radius: var(--radius);
     display: flex;
     gap: 12px;
+    margin-right: auto;
     padding: 8px;
     text-decoration: none;
     transition: background 0.2s var(--easy), border 0.2s var(--easy), transform 0.2s var(--easy);
+}
+
+.cta-button.center {
+    margin: auto;
 }
 
 .cta-button h6 {
@@ -364,34 +369,14 @@ article li {
 .text-button {
     align-items: center;
     flex-direction: row;
-}
-
-
-
-.card-image {
-    align-items: center;
-    flex-direction: row;
     justify-content: space-between;
-    max-width: 100%;
-}
-
-.card-image aside {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    width: clamp(45ch, 100%, 75ch);
-}
-
-.card-image img {
-    border-radius: var(--radius);
-    width: clamp(0px, 30%, 350px);
+    width: 100%;
 }
 
 
 
 .points {
-    max-width: 100%;
+    margin-right: auto;
 }
 
 .points aside {
@@ -586,7 +571,7 @@ article li {
 .steps aside {
     align-items: center;
     background: rgb(var(--ucscyellow), 0.1);
-    border-radius: 20px;
+    border-radius: var(--radius);
     display: flex;
     gap: 30px;
     margin-right: auto;
