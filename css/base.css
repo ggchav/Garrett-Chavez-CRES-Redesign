@@ -5,7 +5,7 @@
     --blue2: 19, 165, 220;
     --blue3: 0, 121, 136;
     --easy: cubic-bezier(0.5, 0.25, 0, 1);
-    --radius: 10px;
+    --radius: 8px;
 }
 
 * {
@@ -364,7 +364,7 @@ article li {
 }
 
 .text-block.pinned h3 {
-    background: rgba(218, 33, 109, 0.2);
+    background: rgba(218, 33, 109, 0.15);
     border-radius: var(--radius);
     color: #222;
     padding: 20px;
@@ -503,6 +503,7 @@ article li {
 }
 
 
+
 .frames {
     flex-direction: row;
 }
@@ -568,13 +569,14 @@ article li {
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 100px;
     gap: 15px;
+    justify-content: center;
+    width: 100%;
 }
 
 .pins svg {
     fill: #DA216D;
-    width: 150px;
+    width: 100px;
 }
 
 .pins div {
@@ -586,16 +588,9 @@ article li {
 }
 
 
+
 .steps aside:first-child {
-    background: rgb(var(--ucscyellow), .75);
-}
-
-.steps.blue aside:first-child {
-    background: rgb(var(--blue1));
-}
-
-.steps.blue aside:first-child h3 {
-    color: white;
+    background: rgb(var(--ucscyellow), .5);
 }
 
 .steps aside {
@@ -606,10 +601,6 @@ article li {
     gap: 30px;
     margin-right: auto;
     padding: 20px 30px;
-}
-
-.steps.blue aside {
-    background: rgb(var(--blue1), 0.05);
 }
 
 .steps .number {
@@ -624,11 +615,6 @@ article li {
     width: 45px;
 }
 
-.steps.blue .number {
-    background: rgb(var(--blue1));
-    color: white;
-}
-
 .steps aside div:last-child {
     display: flex;
     flex-direction: column;
@@ -638,6 +624,7 @@ article li {
 .steps h3 {
     color: #222;
 }
+
 
 
 
