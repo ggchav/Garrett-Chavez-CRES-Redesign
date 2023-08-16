@@ -356,16 +356,21 @@ article li {
 
 .text-block {
     gap: 15px;
+    margin-right: auto;
 }
 
 .text-block h2 {
     max-width: 800px;
 }
 
-.text-block.centered {
-    color: rgb(var(--ucscblue)) !important;
-    text-align: center;
+.text-block.pinned h3 {
+    background: rgba(218, 33, 109, 0.2);
+    border-radius: var(--radius);
+    color: #222;
+    padding: 20px;
 }
+
+
 
 .text-button {
     align-items: center;
@@ -378,16 +383,17 @@ article li {
     flex-shrink: 0;
 }
 
+
+
 .image-header {
     position: relative;
 }
 
-
 .image-header h1 {
     backdrop-filter: blur(5px);
     background: rgba(255, 255, 255, 0.9);
-    bottom: 40px;
-    padding: 20px;
+    bottom: 80px;
+    padding: 20px 60px;
     position: absolute;
 }
 
@@ -555,12 +561,11 @@ article li {
 .pins {
     flex-direction: row;
     gap: 100px;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .pins aside {
     align-items: center;
-    display: flex;
     display: flex;
     flex-direction: column;
     gap: 100px;
@@ -568,8 +573,8 @@ article li {
 }
 
 .pins svg {
-    fill: rgb(var(--blue1));
-    width: 100px;
+    fill: #DA216D;
+    width: 150px;
 }
 
 .pins div {
@@ -577,13 +582,20 @@ article li {
 }
 
 .pins h5 {
-    color: rgb(var(--blue1));
     margin-bottom: 5px;
 }
 
 
 .steps aside:first-child {
     background: rgb(var(--ucscyellow), .75);
+}
+
+.steps.blue aside:first-child {
+    background: rgb(var(--blue1));
+}
+
+.steps.blue aside:first-child h3 {
+    color: white;
 }
 
 .steps aside {
@@ -596,7 +608,11 @@ article li {
     padding: 20px 30px;
 }
 
-.steps aside .number {
+.steps.blue aside {
+    background: rgb(var(--blue1), 0.05);
+}
+
+.steps .number {
     align-items: center;
     background: rgb(var(--ucscyellow), .75);
     border-radius: 50%;
@@ -606,6 +622,11 @@ article li {
     height: 45px;
     justify-content: center;
     width: 45px;
+}
+
+.steps.blue .number {
+    background: rgb(var(--blue1));
+    color: white;
 }
 
 .steps aside div:last-child {
