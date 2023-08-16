@@ -431,6 +431,78 @@ article li {
 
 
 
+.checklist {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    padding: 20px 0;
+}
+
+.checklist label {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    padding: 20px;
+    padding-left: 60px;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checklist label input {
+    cursor: pointer;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    width: 0;
+}
+
+
+.checkmark {
+    border: 2px solid rgb(var(--blue1));
+    border-radius: 50%;
+    height: 34px;
+    left: 5px;
+    position: absolute;
+    transition: transform 0.2s var(--easy), background 0.2s var(--easy);
+    width: 34px;
+}
+
+.checklist label:hover input ~ .checkmark {
+    transform: scale(1.2);
+}
+
+.checklist label input:checked ~ .checkmark {
+    background: rgb(var(--blue1));
+    border: 2px solid rgb(var(--blue1));
+}
+
+.checkmark:after {
+    content: "";
+    display: none;
+    position: absolute;
+}
+
+.checklist label input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checklist label .checkmark:after {
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    height: 15px;
+    left: 9px;
+    top: 4px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 7px;
+}
+
+
+
 .card-dropdown {
     margin-right: auto;
 }
@@ -598,6 +670,10 @@ article li {
     background: rgb(var(--ucscyellow), .5);
 }
 
+.steps aside:first-child:hover {
+    background: rgb(var(--ucscyellow), .5);
+}
+
 .steps aside {
     align-items: center;
     background: rgb(var(--ucscyellow), 0.1);
@@ -606,6 +682,11 @@ article li {
     gap: 30px;
     margin-right: auto;
     padding: 20px 30px;
+    transition: background 0.3s var(--easy);
+}
+
+.steps aside:hover {
+    background: rgb(var(--ucscyellow), 0.2);
 }
 
 .steps .number {
@@ -617,7 +698,12 @@ article li {
     font-weight: 700;
     height: 45px;
     justify-content: center;
+    transition: transform 0.3s var(--easy);
     width: 45px;
+}
+
+.steps aside:hover .number {
+    transform: scale(1.25);
 }
 
 .steps aside div:last-child {
